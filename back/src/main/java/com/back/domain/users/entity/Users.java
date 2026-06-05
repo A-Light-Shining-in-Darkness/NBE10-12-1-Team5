@@ -36,10 +36,10 @@ public class Users {
 
     @CreatedDate
     @Column(updatable = false)
-    private LocalDateTime createdate;
+    private LocalDateTime createDate;
 
     @LastModifiedDate
-    private LocalDateTime modifydate;
+    private LocalDateTime modifyDate;
 
     @Builder
     public Users(String email, String address, String addressDetail, Integer postcode) {

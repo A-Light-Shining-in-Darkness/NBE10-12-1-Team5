@@ -1,4 +1,4 @@
-package com.back.customer.entity;
+package com.back.users.entity;
 
 import jakarta.persistence.*;
 import lombok.AccessLevel;
@@ -16,7 +16,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @EntityListeners(AuditingEntityListener.class)
 @Table(name = "users")
-public class Customer {
+public class Users {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -39,7 +39,7 @@ public class Customer {
     private LocalDateTime updatedate;
 
     @Builder
-    public Customer(String email, String address, String postcode) {
+    public Users(String email, String address, String postcode) {
         this.email = email;
         this.address = address;
         this.postcode = postcode;

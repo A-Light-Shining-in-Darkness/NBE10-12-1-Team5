@@ -12,7 +12,7 @@ public class ModifyUserResponse {
     private final String email;
     private final String address;
     private final String addressDetail;
-    private final Integer postcode;
+    private final String postcode;
     private final LocalDateTime createDate;
     private final LocalDateTime modifyDate;
 

@@ -18,6 +18,6 @@ public class ModifyUserRequest {
     @NotBlank(message = "상세주소를 입력해주세요.")
     private String addressDetail;
 
-    @NotNull(message = "우편번호를 입력해주세요.")
-    private Integer postcode;
+    @NotBlank(message = "우편번호를 입력해주세요.")
+    private String postcode;
 }

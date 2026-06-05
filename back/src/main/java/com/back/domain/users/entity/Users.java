@@ -1,4 +1,4 @@
-package com.back.users.entity;
+package com.back.domain.users.entity;
 
 import jakarta.persistence.*;
 import lombok.AccessLevel;
@@ -29,25 +29,30 @@ public class Users {
     private String address;
 
     @Column(nullable = false)
+    private String addressDetail;
+
+    @Column(nullable = false)
     private String postcode;
 
     @CreatedDate
     @Column(updatable = false)
-    private LocalDateTime createdate;
+    private LocalDateTime createDate;
 
     @LastModifiedDate
-    private LocalDateTime updatedate;
+    private LocalDateTime modifyDate;
 
     @Builder
-    public Users(String email, String address, String postcode) {
+    public Users(String email, String address, String addressDetail, String postcode) {
         this.email = email;
         this.address = address;
+        this.addressDetail = addressDetail;
         this.postcode = postcode;
     }
 
-    public void update(String email, String address, String postcode) {
+    public void update(String email, String address, String addressDetail, String postcode) {
         this.email = email;
         this.address = address;
+        this.addressDetail = addressDetail;
         this.postcode = postcode;
     }
 }

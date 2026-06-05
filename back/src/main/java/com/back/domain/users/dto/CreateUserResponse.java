@@ -13,8 +13,8 @@ public class CreateUserResponse {
     private final String address;
     private final String addressDetail;
     private final Integer postcode;
-    private final LocalDateTime createdate;
-    private final LocalDateTime modifydate;
+    private final LocalDateTime createDate;
+    private final LocalDateTime modifyDate;
 
     public CreateUserResponse(Users users) {
         this.id = users.getId();
@@ -22,7 +22,7 @@ public class CreateUserResponse {
         this.address = users.getAddress();
         this.addressDetail = users.getAddressDetail();
         this.postcode = users.getPostcode();
-        this.createdate = users.getCreatedate();
-        this.modifydate = users.getModifydate();
+        this.createDate = users.getCreateDate();
+        this.modifyDate = users.getModifyDate();
     }
 }

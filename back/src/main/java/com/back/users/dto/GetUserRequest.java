@@ -7,7 +7,7 @@ import java.time.LocalDateTime;
 @Getter
 public class GetUserRequest {
 
-    private Long id;
+    private Integer id;
     private String email;
     private String address;
     private String postcode;

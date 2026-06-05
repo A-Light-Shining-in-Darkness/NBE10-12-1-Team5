@@ -8,7 +8,7 @@ import java.time.LocalDateTime;
 @Getter
 public class GetUserResponse {
 
-    private final Long id;
+    private final Integer id;
     private final String email;
     private final String address;
     private final String postcode;

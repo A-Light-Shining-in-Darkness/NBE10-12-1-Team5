@@ -19,14 +19,14 @@ public class CreateUserResponse {
 
     @Getter
     public static class UserData {
-        private final Long id;
+        private final Integer id;
         private final String email;
         private final String address;
         private final String postcode;
         private final LocalDateTime createdate;
         private final LocalDateTime updatedate;
 
-        public UserData(Long id, String email, String address, String postcode,
+        public UserData(Integer id, String email, String address, String postcode,
                         LocalDateTime createdate, LocalDateTime updatedate) {
             this.id = id;
             this.email = email;

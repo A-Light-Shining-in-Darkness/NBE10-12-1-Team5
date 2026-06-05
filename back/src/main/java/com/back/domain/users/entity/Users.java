@@ -32,7 +32,7 @@ public class Users {
     private String addressDetail;
 
     @Column(nullable = false)
-    private Integer postcode;
+    private String postcode;
 
     @CreatedDate
     @Column(updatable = false)
@@ -42,14 +42,14 @@ public class Users {
     private LocalDateTime modifyDate;
 
     @Builder
-    public Users(String email, String address, String addressDetail, Integer postcode) {
+    public Users(String email, String address, String addressDetail, String postcode) {
         this.email = email;
         this.address = address;
         this.addressDetail = addressDetail;
         this.postcode = postcode;
     }
 
-    public void update(String email, String address, String addressDetail, Integer postcode) {
+    public void update(String email, String address, String addressDetail, String postcode) {
         this.email = email;
         this.address = address;
         this.addressDetail = addressDetail;

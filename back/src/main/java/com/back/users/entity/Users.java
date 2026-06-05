@@ -29,25 +29,30 @@ public class Users {
     private String address;
 
     @Column(nullable = false)
-    private String postcode;
+    private String addressDetail;
+
+    @Column(nullable = false)
+    private Integer postcode;
 
     @CreatedDate
     @Column(updatable = false)
     private LocalDateTime createdate;
 
     @LastModifiedDate
-    private LocalDateTime updatedate;
+    private LocalDateTime modifydate;
 
     @Builder
-    public Users(String email, String address, String postcode) {
+    public Users(String email, String address, String addressDetail, Integer postcode) {
         this.email = email;
         this.address = address;
+        this.addressDetail = addressDetail;
         this.postcode = postcode;
     }
 
-    public void update(String email, String address, String postcode) {
+    public void update(String email, String address, String addressDetail, Integer postcode) {
         this.email = email;
         this.address = address;
+        this.addressDetail = addressDetail;
         this.postcode = postcode;
     }
 }

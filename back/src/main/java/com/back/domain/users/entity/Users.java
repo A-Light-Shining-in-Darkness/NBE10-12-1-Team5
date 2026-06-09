@@ -22,7 +22,7 @@ public class Users {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(nullable = false, unique = true)
+    @Column(unique = true)
     private String email;
 
     @Column(nullable = false)
@@ -41,6 +41,9 @@ public class Users {
     @LastModifiedDate
     private LocalDateTime modifyDate;
 
+    @Column
+    private LocalDateTime deleteDate;
+
     @Builder
     public Users(String email, String address, String addressDetail, String postcode) {
         this.email = email;
@@ -54,5 +57,14 @@ public class Users {
         this.address = address;
         this.addressDetail = addressDetail;
         this.postcode = postcode;
+    }
+
+    public void delete() {
+        this.email = null;
+        this.deleteDate = LocalDateTime.now();
+    }
+
+    public boolean isDeleted() {
+        return this.deleteDate != null;
     }
 }

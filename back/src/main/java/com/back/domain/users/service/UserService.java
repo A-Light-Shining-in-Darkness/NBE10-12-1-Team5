@@ -25,11 +25,11 @@ public class UserService {
     }
 
     public List<Users> findAll() {
-        return userRepository.findAll();
+        return userRepository.findByDeleteDateIsNull();
     }
 
     public Optional<Users> findById(int id) {
-        return userRepository.findById(id);
+        return userRepository.findByIdAndDeleteDateIsNull(id);
     }
 
     public void update(Users user, String email, String address, String addressDetail, String postcode) {
@@ -37,6 +37,6 @@ public class UserService {
     }
 
     public void delete(Users user) {
-        userRepository.delete(user);
+        user.delete();
     }
 }

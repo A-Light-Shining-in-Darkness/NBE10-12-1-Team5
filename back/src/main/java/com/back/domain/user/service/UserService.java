@@ -25,11 +25,11 @@ public class UserService {
     }
 
     public List<User> findAll() {
-        return userRepository.findByDeleteDateIsNull();
+        return userRepository.findAll();
     }
 
     public Optional<User> findById(int id) {
-        return userRepository.findByIdAndDeleteDateIsNull(id);
+        return userRepository.findById(id);
     }
 
     public void update(User user, String email, String address, String addressDetail, String postcode) {

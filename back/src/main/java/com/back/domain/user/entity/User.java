@@ -20,6 +20,9 @@ public class User extends BaseEntity {
     @Column(unique = true)
     private String email;
 
+    @Column
+    private String pastEmail;
+
     @Column(nullable = false)
     private String address;
 
@@ -45,6 +48,7 @@ public class User extends BaseEntity {
     }
 
     public void delete() {
+        this.pastEmail = this.email;
         this.email = null;
         this.deleteDate = LocalDateTime.now();
     }

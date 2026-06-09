@@ -8,8 +8,6 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
-import java.time.LocalDateTime;
-
 @Entity
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
@@ -50,10 +48,6 @@ public class User extends BaseEntity {
     public void delete() {
         this.pastEmail = this.email;
         this.email = null;
-        this.deleteDate = LocalDateTime.now();
-    }
-
-    public boolean isDeleted() {
-        return this.deleteDate != null;
+        softDelete();
     }
 }
